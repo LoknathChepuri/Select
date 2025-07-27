@@ -16,12 +16,25 @@ body {
   background-size: cover, 300px 300px;
   background-repeat: repeat, repeat;
   min-height: 100vh;
-  padding-top: 56px !important; /* Standard Bootstrap navbar height for fixed-top */
+  padding-top: 48px !important; /* Reduce padding for less gap below navbar */
 }
 
-@media (min-width: 577px) {
+@media (max-width: 576px) {
   body {
-    padding-top: 56px !important;
+    padding-top: 36px !important; /* Reduce gap below navbar on mobile */
+  }
+  .main-content-area {
+    margin-top: 0.5rem !important;
+    padding-top: 2.2rem !important;
+  }
+  .navbar-nav .nav-link {
+    max-width: none;
+    font-size: 0.93rem !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    white-space: nowrap;
+    text-overflow: unset;
+    overflow: visible;
   }
 }
 
@@ -68,10 +81,48 @@ body {
   /* Darker modern shopping site gradient: orange to deep pink */
   box-shadow: 0 2px 16px rgba(255,94,98,0.13);
 }
+.navbar .container-fluid {
+  display: flex;
+  flex-wrap: nowrap !important;
+  align-items: center;
+}
+.navbar-nav {
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center;
+}
+.navbar-nav .nav-item {
+  white-space: nowrap;
+  min-width: 0;
+}
 .navbar-nav .nav-link {
-  padding-top: 0.7rem !important;
-  padding-bottom: 0.7rem !important;
-  min-height: 2.2rem;
+  max-width: none;
+  text-overflow: unset;
+  overflow: visible;
+}
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1.05rem !important;
+    padding-left: 0.2rem !important;
+    padding-right: 0.4rem !important;
+    margin-right: 0.3rem !important;
+    letter-spacing: 1px;
+  }
+  .navbar-nav {
+    gap: 0.2rem !important;
+  }
+  .navbar-nav .nav-item {
+    flex: 0 0 auto;
+  }
+  .navbar-nav .nav-link {
+    max-width: none;
+    font-size: 0.95rem !important;
+    padding-left: 0.7rem !important;
+    padding-right: 0.7rem !important;
+    white-space: nowrap;
+    text-overflow: unset;
+    overflow: visible;
+  }
 }
 .navbar-nav .nav-link.active, .navbar-nav .nav-link:focus, .navbar-nav .nav-link:active {
   background: #ff5e62 !important; /* Match the end color of nav-gradient */

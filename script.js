@@ -143,6 +143,160 @@ const catalog = [
                 originalPrice: 2999,
                 images: ["images/Silk Sarees/Product_2.1.jpeg", "Images/Silk Sarees/Product_2.2.jpeg", "images/Silk Sarees/Product_2.3.jpeg"]
             },
+            {
+                code: "SR101",
+                title: "Elegant Red Silk",
+                price: 2499,
+                originalPrice: 2999,
+                images: ["images/Silk Sarees/Product_1.1.jpeg", "Images/Silk Sarees/Product_1.2.jpeg", "images/Silk Sarees/Product_1.3.jpeg"]
+            },
+            {
+                code: "SR102",
+                title: "Classic Blue Silk",
+                price: 2599,
+                originalPrice: 2999,
+                images: ["images/Silk Sarees/Product_2.1.jpeg", "Images/Silk Sarees/Product_2.2.jpeg", "images/Silk Sarees/Product_2.3.jpeg"]
+            },
+            {
+                code: "SR101",
+                title: "Elegant Red Silk",
+                price: 2499,
+                originalPrice: 2999,
+                images: ["images/Silk Sarees/Product_1.1.jpeg", "Images/Silk Sarees/Product_1.2.jpeg", "images/Silk Sarees/Product_1.3.jpeg"]
+            },
+            {
+                code: "SR102",
+                title: "Classic Blue Silk",
+                price: 2599,
+                originalPrice: 2999,
+                images: ["images/Silk Sarees/Product_2.1.jpeg", "Images/Silk Sarees/Product_2.2.jpeg", "images/Silk Sarees/Product_2.3.jpeg"]
+            },
+            {
+                code: "SR101",
+                title: "Elegant Red Silk",
+                price: 2499,
+                originalPrice: 2999,
+                images: ["images/Silk Sarees/Product_1.1.jpeg", "Images/Silk Sarees/Product_1.2.jpeg", "images/Silk Sarees/Product_1.3.jpeg"]
+            },
+            {
+                code: "SR102",
+                title: "Classic Blue Silk",
+                price: 2599,
+                originalPrice: 2999,
+                images: ["images/Silk Sarees/Product_2.1.jpeg", "Images/Silk Sarees/Product_2.2.jpeg", "images/Silk Sarees/Product_2.3.jpeg"]
+            },
+            {
+                code: "SR101",
+                title: "Elegant Red Silk",
+                price: 2499,
+                originalPrice: 2999,
+                images: ["images/Silk Sarees/Product_1.1.jpeg", "Images/Silk Sarees/Product_1.2.jpeg", "images/Silk Sarees/Product_1.3.jpeg"]
+            },
+            {
+                code: "SR102",
+                title: "Classic Blue Silk",
+                price: 2599,
+                originalPrice: 2999,
+                images: ["images/Silk Sarees/Product_2.1.jpeg", "Images/Silk Sarees/Product_2.2.jpeg", "images/Silk Sarees/Product_2.3.jpeg"]
+            },
+            {
+                code: "SR101",
+                title: "Elegant Red Silk",
+                price: 2499,
+                originalPrice: 2999,
+                images: ["images/Silk Sarees/Product_1.1.jpeg", "Images/Silk Sarees/Product_1.2.jpeg", "images/Silk Sarees/Product_1.3.jpeg"]
+            },
+            {
+                code: "SR102",
+                title: "Classic Blue Silk",
+                price: 2599,
+                originalPrice: 2999,
+                images: ["images/Silk Sarees/Product_2.1.jpeg", "Images/Silk Sarees/Product_2.2.jpeg", "images/Silk Sarees/Product_2.3.jpeg"]
+            },
+            {
+                code: "SR101",
+                title: "Elegant Red Silk",
+                price: 2499,
+                originalPrice: 2999,
+                images: ["images/Silk Sarees/Product_1.1.jpeg", "Images/Silk Sarees/Product_1.2.jpeg", "images/Silk Sarees/Product_1.3.jpeg"]
+            },
+            {
+                code: "SR102",
+                title: "Classic Blue Silk",
+                price: 2599,
+                originalPrice: 2999,
+                images: ["images/Silk Sarees/Product_2.1.jpeg", "Images/Silk Sarees/Product_2.2.jpeg", "images/Silk Sarees/Product_2.3.jpeg"]
+            },
+            {
+                code: "SR101",
+                title: "Elegant Red Silk",
+                price: 2499,
+                originalPrice: 2999,
+                images: ["images/Silk Sarees/Product_1.1.jpeg", "Images/Silk Sarees/Product_1.2.jpeg", "images/Silk Sarees/Product_1.3.jpeg"]
+            },
+            {
+                code: "SR102",
+                title: "Classic Blue Silk",
+                price: 2599,
+                originalPrice: 2999,
+                images: ["images/Silk Sarees/Product_2.1.jpeg", "Images/Silk Sarees/Product_2.2.jpeg", "images/Silk Sarees/Product_2.3.jpeg"]
+            },
+            {
+                code: "SR101",
+                title: "Elegant Red Silk",
+                price: 2499,
+                originalPrice: 2999,
+                images: ["images/Silk Sarees/Product_1.1.jpeg", "Images/Silk Sarees/Product_1.2.jpeg", "images/Silk Sarees/Product_1.3.jpeg"]
+            },
+            {
+                code: "SR102",
+                title: "Classic Blue Silk",
+                price: 2599,
+                originalPrice: 2999,
+                images: ["images/Silk Sarees/Product_2.1.jpeg", "Images/Silk Sarees/Product_2.2.jpeg", "images/Silk Sarees/Product_2.3.jpeg"]
+            },
+            {
+                code: "SR101",
+                title: "Elegant Red Silk",
+                price: 2499,
+                originalPrice: 2999,
+                images: ["images/Silk Sarees/Product_1.1.jpeg", "Images/Silk Sarees/Product_1.2.jpeg", "images/Silk Sarees/Product_1.3.jpeg"]
+            },
+            {
+                code: "SR102",
+                title: "Classic Blue Silk",
+                price: 2599,
+                originalPrice: 2999,
+                images: ["images/Silk Sarees/Product_2.1.jpeg", "Images/Silk Sarees/Product_2.2.jpeg", "images/Silk Sarees/Product_2.3.jpeg"]
+            },
+            {
+                code: "SR101",
+                title: "Elegant Red Silk",
+                price: 2499,
+                originalPrice: 2999,
+                images: ["images/Silk Sarees/Product_1.1.jpeg", "Images/Silk Sarees/Product_1.2.jpeg", "images/Silk Sarees/Product_1.3.jpeg"]
+            },
+            {
+                code: "SR102",
+                title: "Classic Blue Silk",
+                price: 2599,
+                originalPrice: 2999,
+                images: ["images/Silk Sarees/Product_2.1.jpeg", "Images/Silk Sarees/Product_2.2.jpeg", "images/Silk Sarees/Product_2.3.jpeg"]
+            },
+            {
+                code: "SR101",
+                title: "Elegant Red Silk",
+                price: 2499,
+                originalPrice: 2999,
+                images: ["images/Silk Sarees/Product_1.1.jpeg", "Images/Silk Sarees/Product_1.2.jpeg", "images/Silk Sarees/Product_1.3.jpeg"]
+            },
+            {
+                code: "SR102",
+                title: "Classic Blue Silk",
+                price: 2599,
+                originalPrice: 2999,
+                images: ["images/Silk Sarees/Product_2.1.jpeg", "Images/Silk Sarees/Product_2.2.jpeg", "images/Silk Sarees/Product_2.3.jpeg"]
+            },
             // ...repeat or add more products as needed...
         ]
     },
@@ -233,7 +387,19 @@ function renderProducts() {
             a.className = 'page-link';
             a.href = '#';
             a.textContent = p;
-            a.onclick = (e) => { e.preventDefault(); currentPage = p; renderProducts(); window.scrollTo({top:document.querySelector('.main-content-area')?.offsetTop||0, left:0, behavior:'smooth'}); };
+            a.onclick = (e) => { 
+                e.preventDefault(); 
+                currentPage = p; 
+                renderProducts(); 
+                // Scroll to main-content-area minus navbar height (responsive)
+                const mainContent = document.querySelector('.main-content-area');
+                const nav = document.querySelector('.navbar');
+                let navHeight = nav ? nav.offsetHeight : 56;
+                // On mobile, navbar may be smaller
+                if (window.innerWidth <= 576) navHeight = 32;
+                const scrollTo = (mainContent?.offsetTop || 0) - navHeight - 4;
+                window.scrollTo({top: scrollTo > 0 ? scrollTo : 0, left:0, behavior:'smooth'});
+            };
             li.appendChild(a);
             ul.appendChild(li);
         }
