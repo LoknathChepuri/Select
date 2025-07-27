@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saree Select � Home Selection Platform</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light border-bottom box-shadow fixed-top py-0 nav-gradient" style="min-height:32px; font-size:0.95rem;line-height:1.1; margin-bottom: 0; top:0;">
+            <div class="container-fluid">
+                <a class="navbar-brand py-0 fancy-brand" href="index.html">Saree Select</a>
+                <ul class="navbar-nav flex-row flex-wrap ms-auto w-100 justify-content-end" style="gap:0.5rem;">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="order.html">Book a Selection</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="delivery.html">Delivery Areas</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container my-4 mt-5 bg-white bg-gradient-shop rounded-4 shadow-lg p-3 p-md-4 main-content-area" style="max-width:1200px;">
+        <h1 class="display-3 fw-bold text-center mb-3 site-title-gradient fancy-title">Saree Select</h1>
+        <p class="lead text-center mb-4" style="color:#4b006e; font-size:1.35rem;">Select up to 10 sarees online and request a <b>Home Selection</b> in Hyderabad!</p>
+        <div id="category-buttons" class="mb-4 text-center"></div>
+        <section class="mb-5">
+            <h2 id="category-title" class="h4 mb-4 text-center"></h2>
+            <div id="product-grid" class="row row-cols-2 row-cols-md-4 g-4 justify-content-center"></div>
+            <nav id="pagination-nav" class="mt-4"></nav>
+        </section>
+    </div>
+    <!-- Modal for product gallery -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="modal-carousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner" id="modal-carousel-inner"></div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#modal-carousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#modal-carousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="fw-semibold text-success" id="modal-price"></div>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer bg-dark text-white-50 mt-4">
+        <div class="container text-center py-1">
+            <span class="fw-bold">&copy; 2025 Saree Select</span>
+            <span class="d-block d-md-inline">| Local Saree Selection &amp; Home Trial Platform</span><br />
+            <span class="small d-block mt-1" style="white-space:normal;word-break:break-word;">Delivery: Moosarambagh, Dilsukhnagar, L.B. Nagar, Uppal, Kothapet, Nagole, Malakpet &amp; nearby areas (within 40�50 km)</span>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

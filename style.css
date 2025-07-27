@@ -1,0 +1,187 @@
+/* Copied from ASP.NET site.css for static HTML version */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html { font-size: 16px; }
+}
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+html { position: relative; min-height: 100%; }
+body {
+  margin-bottom: 0;
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: linear-gradient(135deg, #f8fafc 0%, #e0c3fc 100%);
+  background-size: cover, 300px 300px;
+  background-repeat: repeat, repeat;
+  min-height: 100vh;
+  padding-top: 56px !important; /* Standard Bootstrap navbar height for fixed-top */
+}
+
+@media (min-width: 577px) {
+  body {
+    padding-top: 56px !important;
+  }
+}
+
+/* Remove margin-top from .container and .container-fluid for navbar fix */
+.container, .container-fluid {
+  margin-top: 0 !important;
+}
+.product-img-square {
+  width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 0.7rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10); transition: transform 0.2s, box-shadow 0.2s; margin-bottom: 0.5rem;
+}
+.product-img-square:hover { transform: scale(1.04); box-shadow: 0 6px 24px rgba(0,0,0,0.18); }
+.carousel-inner img {
+  width: 100%; height: 350px; object-fit: cover; border-radius: 0.5rem;
+}
+@media (max-width: 576px) {
+  .product-img-square { width: 100%; aspect-ratio: 1/1; max-height: 140px; }
+  .card-title { font-size: 1rem; }
+  .footer { font-size: 0.7rem; padding: 0.1rem 0 0.1rem 0; line-height: 1.1; }
+  .pagination { font-size: 0.95rem; margin-bottom: 7.5rem; }
+  .main-content-area { margin-bottom: 2.5rem; padding-top: 3.2rem !important; }
+  .card-img-top { max-height: 140px; }
+  .footer .small, .footer span { font-size: 0.7rem !important; white-space: normal !important; word-break: break-word !important; line-height: 1.1; margin: 0 !important; padding: 0 !important; }
+  .navbar-nav .nav-link { margin-bottom: 0.3rem; padding-top: 0.3rem !important; padding-bottom: 0.3rem !important; min-height: 1.5rem; font-size: 1.08rem !important; }
+  .navbar { font-size: 1.08rem !important; min-height: 32px !important; background: #f8fafc !important; }
+  .navbar-brand { font-size: 1.15rem !important; }
+}
+.navbar {
+  min-height: 56px;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  font-size: 0.95rem;
+  line-height: 1.1;
+  background: #fff !important;
+  z-index: 1030;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+}
+.navbar.nav-gradient {
+  background: linear-gradient(90deg, #ff9966 0%, #ff5e62 100%) !important;
+  /* Darker modern shopping site gradient: orange to deep pink */
+  box-shadow: 0 2px 16px rgba(255,94,98,0.13);
+}
+.navbar-nav .nav-link {
+  padding-top: 0.7rem !important;
+  padding-bottom: 0.7rem !important;
+  min-height: 2.2rem;
+}
+.navbar-nav .nav-link.active, .navbar-nav .nav-link:focus, .navbar-nav .nav-link:active {
+  background: #ff5e62 !important; /* Match the end color of nav-gradient */
+  color: #fff !important;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(255,94,98,0.18);
+  transition: background 0.2s, color 0.2s;
+}
+.card {
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(123,67,151,0.10);
+  border: 1.5px solid #e0c3fc;
+  transition: box-shadow 0.2s, border 0.2s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+.card:hover {
+  box-shadow: 0 8px 32px rgba(220,36,48,0.13);
+  border: 1.5px solid #dc2430;
+}
+.card-body {
+  flex-shrink: 1;
+  flex-grow: 0;
+  min-height: unset;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.card-img-top { flex: 1 1 70%; max-height: 320px; }
+.card-title {
+  font-family: 'Segoe UI Semibold', 'Segoe UI', Arial, sans-serif;
+  color: #7b4397;
+  font-size: 1.15rem;
+}
+.fw-semibold.text-success {
+  color: #dc2430 !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem;
+}
+.btn-outline-primary, .btn-primary {
+  border-radius: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(123,67,151,0.08);
+}
+.btn-outline-primary:hover, .btn-primary:hover {
+  background: linear-gradient(90deg, #7b4397 0%, #dc2430 100%);
+  color: #fff !important;
+  border-color: #7b4397;
+}
+.pagination { margin-bottom: 5.5rem; }
+.footer {
+  background: #222;
+  color: #fff;
+  padding: 0.1rem 0 0.1rem 0;
+  font-size: 0.8rem;
+  text-align: center;
+  width: 100%;
+  border-top: 2px solid #b993d6;
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.08);
+  position: static;
+  word-break: break-word;
+  flex-wrap: wrap;
+  overflow-wrap: break-word;
+  white-space: normal;
+  line-height: 1.1;
+}
+.bg-gradient-shop {
+  background: linear-gradient(135deg, #f8fafc 0%, #f3e7e9 100%);
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: #222;
+  border-radius: 50%;
+  padding: 8px;
+  filter: invert(1) drop-shadow(0 0 2px #000);
+  opacity: 0.95;
+}
+.fancy-brand {
+  font-family: 'Pacifico', 'Segoe Script', cursive, sans-serif;
+  font-size: 2rem !important;
+  background: linear-gradient(90deg, #7b4397 0%, #dc2430 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px rgba(123,67,151,0.10);
+}
+.site-title-gradient {
+  background: linear-gradient(90deg, #7b4397 0%, #dc2430 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px rgba(123,67,151,0.10);
+}
+.fancy-title {
+  font-family: 'Pacifico', 'Segoe Script', cursive, sans-serif;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+.main-content-area {
+  margin-top: 1.5rem !important;
+  box-shadow: 0 6px 32px rgba(123,67,151,0.10);
+  border: 1.5px solid #e0c3fc;
+}
