@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ - Saree Select</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light border-bottom box-shadow fixed-top py-0 nav-gradient" style="min-height:32px; font-size:0.95rem;line-height:1.1; margin-bottom: 0; top:0;">
+            <div class="container-fluid">
+                <a class="navbar-brand py-0 fancy-brand" href="index.html">Saree Select</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse custom-mobile-dropdown" id="mainNavbar">
+                    <button type="button" class="btn-close d-block d-sm-none ms-auto mb-2" aria-label="Close" data-bs-toggle="collapse" data-bs-target="#mainNavbar"></button>
+                    <ul class="navbar-nav ms-auto align-items-center" style="gap:0.5rem;">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark active" href="faq.html">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="delivery.html">Delivery Areas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark position-relative" href="cart.html" id="cart-menu-link">
+                                Cart<span id="cart-count" class="badge bg-primary ms-2">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container my-4 mt-5 bg-white bg-gradient-shop rounded-4 shadow-lg p-3 p-md-4 main-content-area" style="max-width:700px;">
+        <h1 class="mb-4 text-center site-title-gradient fancy-title">Frequently Asked Questions</h1>
+        <div class="mb-4">
+            <div class="alert alert-primary text-center" role="alert">
+                <span style="font-size:1.1em;">&#128172; To book a home preview of your favorite outfits, simply call or WhatsApp us or you can place your request directly through our website! You can select up to 10 sarees and we will bring them to your doorstep.</span>
+            </div>
+        </div>
+        <div class="mb-4 text-center">
+            <img src="/Images/selection-banner.jpg" alt="Book a Home Selection" class="img-fluid rounded-3 shadow-sm mb-3" style="max-height:180px;object-fit:cover;" onerror="this.style.display='none'" />
+        </div>
+        <div class="mb-4 text-center">
+            <a href="tel:+91XXXXXXXXXX" class="btn btn-lg btn-primary mx-2 mb-2" style="background:linear-gradient(90deg,#ff9966 0%,#ff5e62 100%);border:none;"><i class="bi bi-telephone"></i> Call Now</a>
+            <div class="mt-2 small text-muted">We are available 9am &ndash; 8pm.</div>
+        </div>
+        <div class="alert alert-warning text-center mb-4" role="alert">
+            <b>Note:</b> &#8377;100 service charge applies if no purchase is made during the home selection visit.
+        </div>
+        <div class="mb-4">
+            <h4 class="mb-2">Frequently Asked Questions</h4>
+            <ul class="list-unstyled">
+                <li class="mb-2"><b>How does this work?</b><br><span class="text-muted">Select up to 10 sarees, contact us via phone or WhatsApp, or submit your request directly through our website. We will confirm your home preview appointment.</span></li>
+                <li class="mb-2"><b>How can I place an order through the website?</b><br><span class="text-muted">Simply add your favorite sarees to the cart, proceed to the user information form, and submit your details.</span></li>
+                <li class="mb-2"><b>When will I be contacted?</b><br><span class="text-muted">We usually respond within 1-2 hours via WhatsApp or phone call after you submit your request.</span></li>
+                <li class="mb-2"><b>What if I have questions?</b><br><span class="text-muted">You can contact us directly at <b>+91XXXXXXXXXX</b> for assistance or submit your query through the website.</span></li>
+            </ul>
+        </div>
+        <div class="mb-4">
+            <h4 class="mb-2">Contact Information</h4>
+            <p>
+                For any questions or help with booking, reach us at:<br>
+                &#128222; <b>+91XXXXXXXXXX</b> &nbsp;
+            </p>
+        </div>
+        <div class="alert alert-success text-center mt-4 mb-5" role="alert">
+            <b>Thank You!</b><br>
+            We appreciate your support for small businesses. We are excited to help you find the perfect styles that suit you &ndash; all from the comfort of your home!
+        </div>
+    </div>
+    <footer class="footer bg-dark text-white-50 mt-4">
+        <div class="container text-center py-1">
+            <span class="fw-bold">&copy; 2025 Saree Select</span>
+            <span class="d-block d-md-inline">| Local Saree Selection &amp; Home Trial Platform</span><br />
+            <span class="small d-block mt-1" style="white-space:normal;word-break:break-word;">Delivery: Moosarambagh, Dilsukhnagar, L.B. Nagar, Uppal, Kothapet, Nagole, Malakpet &amp; nearby areas (within 40�50 km)</span>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function getCart() {
+            return JSON.parse(localStorage.getItem('cart') || '[]');
+        }
+        function updateCartCount() {
+            const cart = getCart();
+            const el = document.getElementById('cart-count');
+            if (el) el.textContent = cart.length;
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            updateCartCount();
+        });
+    </script>
+</body>
+</html>

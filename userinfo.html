@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Information Form - Saree Select</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-light border-bottom box-shadow fixed-top py-0 nav-gradient" style="min-height:32px; font-size:0.95rem;line-height:1.1; margin-bottom: 0; top:0;">
+            <div class="container-fluid">
+                <a class="navbar-brand py-0 fancy-brand" href="index.html">Saree Select</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav ms-auto flex-column flex-sm-row" style="gap:0.5rem;">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="faq.html">FAQ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="delivery.html">Delivery Areas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="cart.html" id="cart-menu-link">Cart <span id="cart-count" class="badge bg-primary">0</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container my-4 mt-5 bg-white bg-gradient-shop rounded-4 shadow-lg p-3 p-md-4 main-content-area" style="max-width:700px;">
+        <h1 class="mb-4 text-center site-title-gradient fancy-title">User Information</h1>
+        <form id="userInfoForm" class="needs-validation" novalidate>
+            <div id="formError" class="alert alert-danger d-none"></div>
+            <div class="mb-3">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" id="entry.1709538750" name="entry.1709538750" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="entry.864940014" name="entry.864940014" pattern="[0-9]{10}" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Address</label>
+                <textarea class="form-control" id="entry.1240228927" name="entry.1240228927" rows="2" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Preferred Time Slot</label>
+                <select class="form-select" id="entry.228560135" name="entry.228560135" required>
+                    <option value="">Select a time slot</option>
+                    <option value="9am-10am">9am-10am</option>
+                    <option value="10am-11am">10am-11am</option>
+                    <option value="11am-12pm">11am-12pm</option>
+                    <option value="12pm-1pm">12pm-1pm</option>
+                    <option value="1pm-2pm">1pm-2pm</option>
+                    <option value="2pm-3pm">2pm-3pm</option>
+                    <option value="3pm-4pm">3pm-4pm</option>
+                    <option value="4pm-5pm">4pm-5pm</option>
+                    <option value="5pm-6pm">5pm-6pm</option>
+                    <option value="6pm-7pm">6pm-7pm</option>
+                    <option value="7pm-8pm">7pm-8pm</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Additional Notes</label>
+                <textarea class="form-control" id="entry.1597775544" name="entry.1597775544" rows="2"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </form>
+        <div id="formSuccess" class="alert alert-success d-none mt-4">
+            Thank you! Your information has been submitted.<br>
+            We usually respond within 1-2 hours via WhatsApp or phone call.<br>
+            <a href="faq.html" class="btn btn-link mt-2">Read our FAQ</a>
+        </div>
+    </div>
+    <footer class="footer bg-dark text-white-50 mt-4">
+        <div class="container text-center py-1">
+            <span class="fw-bold">&copy; 2025 Saree Select</span>
+            <span class="d-block d-md-inline">| Local Saree Selection &amp; Home Trial Platform</span><br />
+            <span class="small d-block mt-1" style="white-space:normal;word-break:break-word;">Delivery: Moosarambagh, Dilsukhnagar, L.B. Nagar, Uppal, Kothapet, Nagole, Malakpet &amp; nearby areas (within 40�50 km)</span>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    // Form state
+    const googleFormUrlBase = 'https://docs.google.com/forms/u/0/d/e/';
+    const googleFormId = '1FAIpQLSfMjDJaJJwmrqJJkgLf1Q_PF_7zPExuQjfEFTLTV-orMK7_iw';
+    const googleFormUrl = googleFormUrlBase + googleFormId + '/formResponse';
+    const formState = {
+      'entry.418389439': '1234',
+      'entry.1709538750': '',
+      'entry.864940014': '',
+      'entry.1240228927': '',
+      'entry.228560135': '',
+      'entry.1597775544': '',
+    };
+    function handleChange(e) {
+      formState[e.target.name] = e.target.value;
+    }
+    async function handleRequest(data) {
+      // Build query string URL
+      const params = new URLSearchParams(data).toString();
+      try {
+          const response = await fetch(googleFormUrl, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: params,
+          redirect: 'follow',
+          referrerPolicy: 'no-referrer'
+        });
+        // Google Forms always returns opaque response for no-cors, so treat as success
+        return { success: true };
+      } catch (err) {
+        return { success: false };
+      }
+    }
+    async function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('formError').classList.add('d-none');
+      populateCartProductIds(); // Ensure product IDs are populated before submission
+
+      // Validation
+      const name = formState['entry.1709538750'].trim();
+      const phone = formState['entry.864940014'].trim();
+      const address = formState['entry.1240228927'].trim();
+      const timeSlot = formState['entry.228560135'];
+
+      // Name validation: not empty, at least 2 characters
+      if (!name || name.length < 2) {
+        document.getElementById('formError').textContent = 'Please enter a valid name.';
+        document.getElementById('formError').classList.remove('d-none');
+        return;
+      }
+      // Phone validation: 10 digits
+      if (!/^\d{10}$/.test(phone)) {
+        document.getElementById('formError').textContent = 'Please enter a valid 10-digit phone number.';
+        document.getElementById('formError').classList.remove('d-none');
+        return;
+      }
+      // Address validation: not empty, at least 1 characters
+      if (!address || address.length < 1) {
+        document.getElementById('formError').textContent = 'Please enter a valid address.';
+        document.getElementById('formError').classList.remove('d-none');
+        return;
+      }
+      // Time slot validation
+      if (!timeSlot) {
+        document.getElementById('formError').textContent = 'Please select a preferred time slot.';
+        document.getElementById('formError').classList.remove('d-none');
+        return;
+      }
+
+      const result = await handleRequest(formState);
+      if (result.success) {
+        document.getElementById('userInfoForm').classList.add('d-none');
+        document.getElementById('formSuccess').classList.remove('d-none');
+        // Clear cart after successful order
+        localStorage.removeItem('cart');
+        updateCartCount();
+      } else {
+        document.getElementById('formError').textContent = 'Submission failed. Please try again.';
+        document.getElementById('formError').classList.remove('d-none');
+      }
+    }
+    // Helper to populate product IDs from cart
+    function populateCartProductIds() {
+      try {
+        const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+        const productIds = cart.map(item => item.code).join(', ');
+        formState['entry.418389439'] = productIds;
+      } catch (e) {
+        formState['entry.418389439'] = '';
+      }
+    }
+    // Cart helpers for cart count in navbar
+    function getCart() {
+      return JSON.parse(localStorage.getItem('cart') || '[]');
+    }
+    function updateCartCount() {
+      const cart = getCart();
+      const el = document.getElementById('cart-count');
+      if (el) el.textContent = cart.length;
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      updateCartCount();
+    });
+    // Attach listeners
+    document.getElementById('userInfoForm').addEventListener('submit', handleSubmit);
+    Array.from(document.querySelectorAll('#userInfoForm input, #userInfoForm textarea, #userInfoForm select')).forEach(el => {
+      el.addEventListener('input', handleChange);
+    });
+    </script>
+</body>
+</html>
