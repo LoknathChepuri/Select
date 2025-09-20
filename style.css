@@ -322,3 +322,52 @@ body {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* Flash Sale Banner */
+@keyframes flashPulse {
+  from { box-shadow: 0 2px 12px rgba(255,94,98,0.13); }
+  to { box-shadow: 0 4px 24px rgba(255,94,98,0.25); }
+}
+.special-note {
+  font-size: 1.15rem;
+  border: 2px solid #ff5e62;
+  background: #fffbe6 !important;
+  color: #dc2430 !important;
+  border-radius: 0.7rem;
+  box-shadow: 0 2px 12px rgba(255,94,98,0.10);
+  letter-spacing: 0.5px;
+}
+.selection-reminder {
+  font-size: 1.35rem;
+  font-family: 'Segoe UI Semibold', 'Segoe UI', Arial, sans-serif;
+  color: #fff;
+  background: linear-gradient(90deg, #ff5e62 0%, #ff9966 100%);
+  border-radius: 1.2rem;
+  padding: 1.1rem 1.5rem;
+  font-weight: 700;
+  box-shadow: 0 4px 24px rgba(255,94,98,0.18);
+  margin-bottom: 1.2rem;
+  border: 3px solid #fffbe6;
+  letter-spacing: 1.2px;
+  text-shadow: 0 2px 8px rgba(123,67,151,0.13), 0 1px 0 #ff9966;
+  animation: popGlow 1.2s infinite alternate;
+  display: inline-block;
+}
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@keyframes popGlow {
+  from { box-shadow: 0 4px 24px rgba(255,94,98,0.18); }
+  to { box-shadow: 0 8px 32px rgba(255,94,98,0.28); }
+}
+.reminder-highlight {
+  color: #fff;
+  font-size: 1.25em;
+  font-family: 'Segoe UI Semibold', 'Segoe UI', Arial, sans-serif;
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
+  text-fill-color: unset;
+  padding: 0 0.2em;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px #ff5e62, 0 1px 0 #ff9966;
+}

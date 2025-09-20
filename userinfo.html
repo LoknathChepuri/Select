@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User Information Form - Saree Select</title>
+    <title>User Information Form - Saree Shop Hub</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -11,12 +11,18 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-light border-bottom box-shadow fixed-top py-0 nav-gradient" style="min-height:32px; font-size:0.95rem;line-height:1.1; margin-bottom: 0; top:0;">
             <div class="container-fluid">
-                <a class="navbar-brand py-0 fancy-brand" href="index.html">Saree Select</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="mainNavbar">
-                    <ul class="navbar-nav ms-auto flex-column flex-sm-row" style="gap:0.5rem;">
+                <a class="navbar-brand py-0 fancy-brand" href="index.html">Saree Shop Hub</a>
+                <div class="d-sm-none ms-auto" style="display:flex;align-items:center;gap:0.5rem;">
+                    <a class="nav-link text-dark position-relative" href="cart.html" id="cart-menu-link" style="display:inline-block; font-size:1.1rem;">
+                        <span class="bi bi-cart"></span> Cart <span id="cart-count" class="badge bg-primary">0</span>
+                    </a>
+                    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse custom-mobile-dropdown" id="mainNavbar">
+                    <button type="button" class="btn-close d-block d-sm-none ms-auto mb-2" aria-label="Close" data-bs-toggle="collapse" data-bs-target="#mainNavbar"></button>
+                    <ul class="navbar-nav ms-auto align-items-center" style="gap:0.5rem;">
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="index.html">Home</a>
                         </li>
@@ -26,14 +32,17 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" href="delivery.html">Delivery Areas</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" href="cart.html" id="cart-menu-link">Cart <span id="cart-count" class="badge bg-primary">0</span></a>
+                        <li class="nav-item d-none d-sm-block">
+                            <a class="nav-link text-dark position-relative" href="cart.html" id="cart-menu-link">Cart <span id="cart-count" class="badge bg-primary">0</span></a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+    <div class="service-charge-note alert alert-warning text-center fw-bold special-note mb-3" role="alert">
+        <span style="font-size:1.2em;">Note: <span class="text-danger">₹100 service charge applies if no purchase is made during the home selection visit.</span></span>
+    </div>
     <div class="container my-4 mt-5 bg-white bg-gradient-shop rounded-4 shadow-lg p-3 p-md-4 main-content-area" style="max-width:700px;">
         <h1 class="mb-4 text-center site-title-gradient fancy-title">User Information</h1>
         <form id="userInfoForm" class="needs-validation" novalidate>
@@ -49,6 +58,10 @@
             <div class="mb-3">
                 <label class="form-label">Address</label>
                 <textarea class="form-control" id="entry.1240228927" name="entry.1240228927" rows="2" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Preferred Date</label>
+                <input type="date" class="form-control" id="preferred-date" name="preferred-date" required>
             </div>
             <div class="mb-3">
                 <label class="form-label">Preferred Time Slot</label>
@@ -82,8 +95,8 @@
     <footer class="footer bg-dark text-white-50 mt-4">
         <div class="container text-center py-1">
             <span class="fw-bold">&copy; 2025 Saree Select</span>
-            <span class="d-block d-md-inline">| Local Saree Selection &amp; Home Trial Platform</span><br />
-            <span class="small d-block mt-1" style="white-space:normal;word-break:break-word;">Delivery: Moosarambagh, Dilsukhnagar, L.B. Nagar, Uppal, Kothapet, Nagole, Malakpet &amp; nearby areas (within 40�50 km)</span>
+            <span class="d-block d-md-inline">| Local Saree Selection</span><br />
+            <span class="small d-block mt-1" style="white-space:normal;word-break:break-word;">Delivery: Moosarambagh, Malakpet, Dilsukhnagar, L.B. Nagar, Saroornagar, Boduppal, Uppal, Chaitanyapuri, Kothapet, Nagole, Hayathnagar, Mehdipatnam, Ameerpet, Gachibowli, Madhapur, Banjara Hills, Jubilee Hills, Hitech City, Raidurg, Manikonda,  Somajiguda, Malkajgiri, Secunderabad, Kukatpally</span>
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -99,9 +112,27 @@
       'entry.1240228927': '',
       'entry.228560135': '',
       'entry.1597775544': '',
+      'entry.931406336_year': '',
+      'entry.931406336_month': '',
+      'entry.931406336_day': ''
     };
     function handleChange(e) {
-      formState[e.target.name] = e.target.value;
+      if (e.target.name === 'preferred-date') {
+        // Populate year, month, day for Google Form
+        const date = e.target.value;
+        if (date) {
+          const [year, month, day] = date.split('-');
+          formState['entry.931406336_year'] = year;
+          formState['entry.931406336_month'] = month;
+          formState['entry.931406336_day'] = day;
+        } else {
+          formState['entry.931406336_year'] = '';
+          formState['entry.931406336_month'] = '';
+          formState['entry.931406336_day'] = '';
+        }
+      } else {
+        formState[e.target.name] = e.target.value;
+      }
     }
     async function handleRequest(data) {
       // Build query string URL
@@ -133,6 +164,11 @@
       const phone = formState['entry.864940014'].trim();
       const address = formState['entry.1240228927'].trim();
       const timeSlot = formState['entry.228560135'];
+      const year = formState['entry.931406336_year'];
+      const month = formState['entry.931406336_month'];
+      const day = formState['entry.931406336_day'];
+      const blockedDates = ['2025-09-21'];
+      const selectedDate = `${year}-${month}-${day}`;
 
       // Name validation: not empty, at least 2 characters
       if (!name || name.length < 2) {
@@ -157,6 +193,22 @@
         document.getElementById('formError').textContent = 'Please select a preferred time slot.';
         document.getElementById('formError').classList.remove('d-none');
         return;
+      }
+      // Date validation
+      if (!year || !month || !day) {
+        document.getElementById('formError').textContent = 'Please select a preferred date.';
+        document.getElementById('formError').classList.remove('d-none');
+        return;
+      }
+      // Blocked date validation
+      if (blockedDates.includes(selectedDate)) {
+        document.getElementById('formError').textContent = 'This date is not available for selection.';
+        document.getElementById('formError').classList.remove('d-none');
+        document.getElementById('preferred-date').setCustomValidity('This date is not available for selection.');
+        document.getElementById('preferred-date').reportValidity();
+        return;
+      } else {
+        document.getElementById('preferred-date').setCustomValidity('');
       }
 
       const result = await handleRequest(formState);
@@ -192,12 +244,46 @@
     }
     document.addEventListener('DOMContentLoaded', function() {
       updateCartCount();
+      // Set min date to today for preferred-date input
+      var dateInput = document.getElementById('preferred-date');
+      if (dateInput) {
+        var today = new Date();
+        var yyyy = today.getFullYear();
+        var mm = String(today.getMonth() + 1).padStart(2, '0');
+        var dd = String(today.getDate()).padStart(2, '0');
+        var minDate = yyyy + '-' + mm + '-' + dd;
+        dateInput.setAttribute('min', minDate);
+
+        // Block specific dates (e.g., 2025-09-21) with immediate validation
+        var blockedDates = ['2025-09-21'];
+        dateInput.addEventListener('input', function() {
+          if (blockedDates.includes(dateInput.value)) {
+            dateInput.setCustomValidity('This date is not available for selection.');
+            dateInput.reportValidity();
+          } else {
+            dateInput.setCustomValidity('');
+          }
+        });
+        dateInput.addEventListener('change', function() {
+          if (blockedDates.includes(dateInput.value)) {
+            dateInput.setCustomValidity('This date is not available for selection.');
+            dateInput.reportValidity();
+          } else {
+            dateInput.setCustomValidity('');
+          }
+        });
+      }
     });
     // Attach listeners
     document.getElementById('userInfoForm').addEventListener('submit', handleSubmit);
     Array.from(document.querySelectorAll('#userInfoForm input, #userInfoForm textarea, #userInfoForm select')).forEach(el => {
       el.addEventListener('input', handleChange);
     });
+    // Also add change event for date input to ensure it works on all browsers
+    const dateInput = document.getElementById('preferred-date');
+    if (dateInput) {
+      dateInput.addEventListener('change', handleChange);
+    }
     </script>
 </body>
 </html>
