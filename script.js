@@ -8,56 +8,65 @@ const catalog = [
                 title: "Elegant Red Silk",
                 price: 2499,
                 originalPrice: 2999,
-                images: ["images/Silk Sarees/Product_1.1.jpeg", "images/Silk Sarees/Product_1.10.jpg"]
+                images: ["images/Silk Sarees/Product_1.1.jpeg", "images/Silk Sarees/Product_1.10.jpg"],
+                inStock: true
             },
             {
                 code: "SR102",
                 title: "Classic Blue Silk",
                 price: 2599,
                 originalPrice: 2999,
-                images: ["images/Silk Sarees/Product_1.2.jpeg", "images/Silk Sarees/Product_1.11.jpg"]
+                images: ["images/Silk Sarees/Product_1.2.jpeg", "images/Silk Sarees/Product_1.11.jpg"],
+                inStock: true
             },
             {
                 code: "SR103",
                 title: "Royal Green Zari Silk",
                 price: 2599,
-                images: ["images/Silk Sarees/Product_1.3.jpeg", "images/Silk Sarees/Product_1.12.jpg"]
+                images: ["images/Silk Sarees/Product_1.3.jpeg", "images/Silk Sarees/Product_1.12.jpg"],
+                inStock: false // Out of stock demo
             },
             {
                 code: "SR114",
                 title: "Peach Blossom Silk",
                 price: 2599,
-                images: ["images/Silk Sarees/Product_1.4.jpg", "images/Silk Sarees/Product_1.13.jpg"]
+                images: ["images/Silk Sarees/Product_1.4.jpg", "images/Silk Sarees/Product_1.13.jpg"],
+                inStock: true
             },
             {
                 code: "SR115",
                 title: "Sunset Orange Banarasi",
                 price: 2599,
-                images: ["images/Silk Sarees/Product_1.5.jpg", "images/Silk Sarees/Product_1.14.jpeg"]
+                images: ["images/Silk Sarees/Product_1.5.jpg", "images/Silk Sarees/Product_1.14.jpeg"],
+                inStock: true
             },
             {
                 code: "SR116",
                 title: "Midnight Blue Kanchipuram",
                 price: 2599,
-                images: ["images/Silk Sarees/Product_1.6.jpg", "images/Silk Sarees/Product_1.15.jpeg"]
+                images: ["images/Silk Sarees/Product_1.6.jpg", "images/Silk Sarees/Product_1.15.jpeg"],
+                inStock: true
             },
             {
                 code: "SR201",
                 title: "Azure Blue Patola",
                 price: 2599,
-                images: ["images/Silk Sarees/Product_1.7.jpg", "images/Silk Sarees/Product_1.16.jpeg"]
+                images: ["images/Silk Sarees/Product_1.7.jpg", "images/Silk Sarees/Product_1.16.jpeg"],
+                inStock: true
             },
             {
                 code: "SR202",
                 title: "Ivory Gold Tissue Silk",
                 price: 2599,
-                images: ["images/Silk Sarees/Product_1.8.jpg"]
+                images: ["images/Silk Sarees/Product_1.8.jpg"],
+                inStock: false // Out of stock demo
             },
             {
                 code: "SR203",
                 title: "Ruby Red Paithani",
                 price: 2599,
-                images: ["images/Silk Sarees/Product_1.9.jpg"]
+                images: ["images/Silk Sarees/Product_1.9.jpg"],
+                inStock: true
             }
         ]
     },
@@ -68,19 +77,22 @@ const catalog = [
                 code: "CT301",
                 title: "Festive Green Cotton",
                 price: 1899,
-                images: ["images/Cotton Sarees/Product_2.1.jpeg"]
+                images: ["images/Cotton Sarees/Product_2.1.jpeg"],
+                inStock: true
             },
             {
                 code: "CT302",
                 title: "Festive Green Cotton 3.2",
                 price: 1899,
-                images: ["images/Cotton Sarees/Product_2.2.jpeg"]
+                images: ["images/Cotton Sarees/Product_2.2.jpeg"],
+                inStock: true
             },
             {
                 code: "CT303",
                 title: "Festive Green Cotton 3.3",
                 price: 1899,
-                images: ["images/Cotton Sarees/Product_2.3.jpeg"]
+                images: ["images/Cotton Sarees/Product_2.3.jpeg"],
+                inStock: true
             }
         ]
     },
@@ -91,7 +103,8 @@ const catalog = [
                 code: "PT501",
                 title: "Royal Purple Pattu",
                 price: 3999,
-                images: ["images/Pattu Sarees/Product_3.1.jpeg"]
+                images: ["images/Pattu Sarees/Product_3.1.jpeg"],
+                inStock: true
             }
         ]
     }
@@ -143,7 +156,8 @@ function removeFromCart(productCode) {
 }
 function renderProducts() {
     const cat = catalog.find(c => c.name === selectedCategory);
-    const products = cat ? cat.products : [];
+    // Only show products that are in stock
+    const products = cat ? cat.products.filter(p => p.inStock !== false) : [];
     const grid = document.getElementById('product-grid');
     const title = document.getElementById('category-title');
     title.textContent = selectedCategory;
@@ -290,6 +304,9 @@ document.addEventListener('DOMContentLoaded', function() {
     renderCategories();
     renderProducts();
     updateCartCount();
-    populateCartProductIds();
+    // Only call populateCartProductIds if formState is defined
+    if (typeof formState !== 'undefined') {
+        populateCartProductIds();
+    }
 });
 window.removeFromCart = removeFromCart;
