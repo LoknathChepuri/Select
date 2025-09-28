@@ -132,8 +132,10 @@ function setCart(cart) {
 }
 function updateCartCount() {
     const cart = getCart();
-    const el = document.getElementById('cart-count');
-    if (el) el.textContent = cart.length;
+    // Update all cart-count elements (in case there are multiple in navbar)
+    document.querySelectorAll('#cart-count').forEach(el => {
+        el.textContent = cart.length;
+    });
 }
 function addToCart(product) {
     let cart = getCart();
@@ -270,6 +272,7 @@ function renderProducts() {
     } else {
         grid.style.marginBottom = '5rem';
     }
+    updateCartCount(); // Ensure cart badge is updated after rendering products
 }
 function scrollToProducts() {
     const mainContent = document.querySelector('.main-content-area');

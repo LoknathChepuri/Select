@@ -61,19 +61,15 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
     <script>
-    function getCart() {
-        return JSON.parse(localStorage.getItem('cart') || '[]');
-    }
-    function setCart(cart) {
-        localStorage.setItem('cart', JSON.stringify(cart));
-        updateCartCount();
-    }
-    function updateCartCount() {
-        const cart = getCart();
-        const el = document.getElementById('cart-count');
-        if (el) el.textContent = cart.length;
-    }
+    document.addEventListener('DOMContentLoaded', function() {
+      renderCart();
+      updateCartCount();
+    });
+    document.getElementById('place-order-btn').onclick = function() {
+        window.location.href = 'userinfo.html';
+    };
     function renderCart() {
         const cart = getCart();
         const container = document.getElementById('cart-items');
@@ -100,13 +96,6 @@
         setCart(cart);
         renderCart();
     }
-    document.getElementById('place-order-btn').onclick = function() {
-        window.location.href = 'userinfo.html';
-    };
-    document.addEventListener('DOMContentLoaded', function() {
-        renderCart();
-        updateCartCount();
-    });
     </script>
 </body>
 </html>
